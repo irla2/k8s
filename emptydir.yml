@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: emptydir
+spec:
+  containers:
+  - name: emtydir
+    image: tomcat
+    volumeMounts:
+    - name: shared
+      mountPath: /var
+  volumes:
+  - name: shared 
+    emptyDir: {}
+     
+
+

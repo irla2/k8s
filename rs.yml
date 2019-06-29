@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Replicaset 
+metadata:
+  name: rs-replica
+  labels:
+    app: myapp
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: ramu
+  template:
+    metadata:
+      labels:
+        app: ramu
+     spec:
+       containers:
+       - name: pod
+         image: nginx
+         ports:
+         - containerPort: 80
+
+
+
+
