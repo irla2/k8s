@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mypv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: slow
+  awsElasticBlockStore:
+     volumeID: vol-07643c131076e10c4
+     fsType: ext4 
+  
+

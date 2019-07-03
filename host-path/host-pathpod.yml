@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvpod
+spec:
+  containers:
+  - name: test-container
+    image: tomcat
+    volumeMounts:
+    - name: test-volume
+      mountPath: /test/hello
+  volumes:
+  - name: test-volume
+    persistentVolumeClaim:
+      claimName: pv001
